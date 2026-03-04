@@ -98,7 +98,6 @@
             "icon": "user-plus",
             "pages": [
               "apis/tools/user/followed_companies",
-              "apis/tools/user/follow_groups",
               "apis/tools/timeline/companies",
               "apis/tools/timeline/topics",
               "apis/tools/timeline/institutes",
@@ -109,6 +108,21 @@
               "apis/channels/channels_followings_docs",
               "apis/channels/channels_follow",
               "apis/channels/channels_unfollow"
+            ]
+          },
+          {
+            "group": "关注组",
+            "icon": "users",
+            "pages": [
+              "apis/following/follow_groups_create",
+              "apis/following/follow_groups_list",
+              "apis/following/follow_groups_get",
+              "apis/following/follow_groups_update",
+              "apis/following/follow_groups_delete",
+              "apis/following/follow_groups_add_follows",
+              "apis/following/follow_groups_remove_follows",
+              "apis/following/follow_groups_set_follows",
+              "apis/following/follow_groups_docs"
             ]
           }
         ]
@@ -230,6 +244,8 @@
               "sdks/python/search",
               "sdks/python/docs",
               "sdks/python/kb",
+              "sdks/python/channels",
+              "sdks/python/following",
               "sdks/python/user",
               "sdks/python/timeline",
               "sdks/python/stock",
@@ -245,6 +261,8 @@
               "sdks/typescript/search",
               "sdks/typescript/docs",
               "sdks/typescript/kb",
+              "sdks/typescript/channels",
+              "sdks/typescript/following",
               "sdks/typescript/user",
               "sdks/typescript/timeline",
               "sdks/typescript/stock",
