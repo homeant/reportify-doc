@@ -98,6 +98,7 @@
             "icon": "user-plus",
             "pages": [
               "apis/tools/user/followed_companies",
+              "apis/tools/user/follow_groups",
               "apis/tools/timeline/companies",
               "apis/tools/timeline/topics",
               "apis/tools/timeline/institutes",
@@ -184,6 +185,10 @@
               "apis/quant/factors_screen",
               "apis/quant/quotes_ohlcv",
               "apis/quant/quotes_ohlcv_batch",
+              "apis/quant/quotes_1mkline",
+              "apis/quant/quotes_1mkline_batch",
+              "apis/quant/quotes_minute",
+              "apis/quant/quotes_minute_batch",
               "apis/quant/backtest"
             ]
           }
