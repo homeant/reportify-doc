@@ -2487,7 +2487,7 @@ paths:
         Get OHLCV (Open, High, Low, Close, Volume) daily data for a single symbol.
 
         - **symbol**: Stock code (required)
-        - **market**: Stock market (cn, hk, us, global), default: cn. For index quotes (stock_type=index), indices other than A-share (cn) and HK (hk) are queried via global.
+        - **market**: Stock market (cn, hk, us, global), default: cn. For index quotes (stock_type=index), indices other than A-share (cn), HK (hk) and US (us) are queried via global.
         - **start_date**: Start date (optional, default: 1 months ago)
         - **end_date**: End date (optional, default: today)
       operationId: quote_ohlcv
@@ -2550,7 +2550,7 @@ paths:
         Get OHLCV (Open, High, Low, Close, Volume) daily data for multiple symbols.
 
         - **symbols**: List of stock code (required)
-        - **market**: Stock market (cn, hk, us, global), default: cn. For index quotes (stock_type=index), indices other than A-share (cn) and HK (hk) are queried via global.
+        - **market**: Stock market (cn, hk, us, global), default: cn. For index quotes (stock_type=index), indices other than A-share (cn), HK (hk) and US (us) are queried via global.
         - **start_date**: Start date (optional, default: 1 month ago)
         - **end_date**: End date (optional, default: today)
 

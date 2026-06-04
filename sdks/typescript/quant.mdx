@@ -191,7 +191,7 @@ const filtered = await client.quant.factorsScreen({
 
 获取单个股票的 OHLCV 日线数据。
 
-`market` 可选 `cn`/`hk`/`us`/`global`（默认 `cn`）。获取指数行情（`stockType=index`）时，除 A 股（`cn`）、港股（`hk`）外，其余指数统一通过 `global` 查询。
+`market` 可选 `cn`/`hk`/`us`/`global`（默认 `cn`）。获取指数行情（`stockType=index`）时，除 A 股（`cn`）、港股（`hk`）、美股（`us`）外，其余指数统一通过 `global` 查询。
 
 ```typescript
 const data = await client.quant.ohlcv({
@@ -226,7 +226,7 @@ interface OHLCVData {
 
 批量获取多个股票的 OHLCV 数据。
 
-`market` 可选 `cn`/`hk`/`us`/`global`（默认 `cn`）。获取指数行情（`stockType=index`）时，除 A 股（`cn`）、港股（`hk`）外，其余指数统一通过 `global` 查询。
+`market` 可选 `cn`/`hk`/`us`/`global`（默认 `cn`）。获取指数行情（`stockType=index`）时，除 A 股（`cn`）、港股（`hk`）、美股（`us`）外，其余指数统一通过 `global` 查询。
 
 ```typescript
 const data = await client.quant.ohlcvBatch({
