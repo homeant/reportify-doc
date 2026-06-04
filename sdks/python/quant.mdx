@@ -197,7 +197,7 @@ print(df[["date", "open", "high", "low", "close", "volume"]])
 | 参数 | 类型 | 必填 | 说明 |
 |------|------|------|------|
 | `symbol` | `str` | 是 | 股票代码 |
-| `market` | `str` | 否 | 市场，默认 cn |
+| `market` | `str` | 否 | 市场，默认 cn，可选 `cn`/`hk`/`us`/`global`。获取指数行情（`stock_type=index`）时，除 A 股（`cn`）、港股（`hk`）外，其余指数统一通过 `global` 查询 |
 | `start_date` | `str` | 否 | 开始日期，默认 1 个月前 |
 | `end_date` | `str` | 否 | 结束日期，默认今天 |
 
