@@ -151,7 +151,9 @@
               "apis/quant/quotes_kline",
               "apis/quant/quotes_kline_batch",
               "apis/quant/quotes_minute",
-              "apis/quant/quotes_minute_batch"
+              "apis/quant/quotes_minute_batch",
+              "apis/quant/quotes_calendar",
+              "apis/quant/quotes_calendar_check"
             ]
           },
           {
