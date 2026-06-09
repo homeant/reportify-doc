@@ -2832,16 +2832,16 @@ paths:
     get:
       tags:
       - openapi-quant
-      summary: List A-share trading days in a date range (A-shares only)
+      summary: List trading days in a date range
       description: |
-        List A-share trading days within [start_date, end_date] (inclusive).
+        List trading days within [start_date, end_date] (inclusive).
 
-        Only A-shares (market=cn) are supported; HK/US/global are not supported yet and return an error.
+        Supported markets: cn (sh/sz/bj), hk, us. The global market has no calendar source and returns an error.
 
         - **start_date**: Start date (optional, default: Jan 1 of the current year)
         - **end_date**: End date (optional, default: Dec 31 of the current year)
-        - **market**: Stock market, default cn (only cn / A-shares is supported)
-        - **exchange**: Exchange within the market -- sh/sz (optional, default: sh for cn)
+        - **market**: Stock market, default cn (cn/hk/us supported)
+        - **exchange**: Exchange within the market -- cn: sh/sz/bj, hk: hk, us: us (optional, default: sh for cn)
       operationId: trade_calendar_list
       parameters:
       - name: start_date
@@ -2897,15 +2897,15 @@ paths:
     get:
       tags:
       - openapi-quant
-      summary: Check if a date is an A-share trading day (A-shares only)
+      summary: Check if a date is a trading day
       description: |
-        Inspect a single date against the A-share trading calendar.
+        Inspect a single date against the trading calendar.
 
-        Only A-shares (market=cn) are supported; HK/US/global are not supported yet and return an error.
+        Supported markets: cn (sh/sz/bj), hk, us. The global market has no calendar source and returns an error.
 
         - **target**: Date to check (optional, default: today)
-        - **market**: Stock market, default cn (only cn / A-shares is supported)
-        - **exchange**: Exchange within the market -- sh/sz (optional, default: sh for cn)
+        - **market**: Stock market, default cn (cn/hk/us supported)
+        - **exchange**: Exchange within the market -- cn: sh/sz/bj, hk: hk, us: us (optional, default: sh for cn)
 
         Returns whether target is a trading day, plus the previous and next trading days (both strictly relative to target).
       operationId: trade_calendar_check
@@ -6713,8 +6713,11 @@ components:
       enum:
       - sh
       - sz
+      - bj
+      - hk
+      - us
       title: StockExchange
-      description: A-share exchange identifier (sh=上交所, sz=深交所)
+      description: Exchange identifier (sh=上交所, sz=深交所, bj=北交所, hk=香港, us=美国)
     StockType:
       type: string
       enum:

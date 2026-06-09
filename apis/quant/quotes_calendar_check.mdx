@@ -1,13 +1,13 @@
 ---
 title: '交易日判断'
-description: '判断某一天是否为 A 股交易日，并返回上一/下一交易日'
+description: '判断某一天是否为交易日，并返回上一/下一交易日'
 openapi: 'GET /v1/quant/quotes/calendar/check'
 ---
 
 判断指定日期是否为交易日，并返回相对该日期的上一交易日和下一交易日（均为严格的前/后一个交易日）。
 
 <Note>
-目前仅支持 **A 股**（`market=cn`）。港股、美股等暂未支持，传入会返回错误。
+支持的市场：`cn`（A 股，含 `sh`/`sz`/`bj`）、`hk`（港股）、`us`（美股）。`global` 无日历源，传入会返回错误。
 </Note>
 
 <CodeGroup>
@@ -47,11 +47,11 @@ const data = await response.json();
 </ParamField>
 
 <ParamField query="market" type="string" default="cn">
-  股票市场。目前仅支持 `cn`（A 股）
+  股票市场，可选 `cn`/`hk`/`us`（`global` 不支持）
 </ParamField>
 
 <ParamField query="exchange" type="string">
-  交易所，可选值 `sh`（上交所）、`sz`（深交所）。不传时使用市场默认交易所（A 股为 `sh`）
+  交易所。`cn`：`sh`（上交所）/`sz`（深交所）/`bj`（北交所）；`hk`：`hk`；`us`：`us`。不传时使用市场默认交易所（`cn` 为 `sh`）
 </ParamField>
 
 ## 响应参数

@@ -1,13 +1,13 @@
 ---
 title: '交易日历'
-description: '获取指定日期区间内的 A 股交易日列表'
+description: '获取指定日期区间内的交易日列表'
 openapi: 'GET /v1/quant/quotes/calendar'
 ---
 
-获取指定日期区间内的交易日列表。日历数据来自交易所，采用纯 Python 解码，覆盖范围从 1990 年至已公布的未来交易日。
+获取指定日期区间内的交易日列表（按日期升序），覆盖从上市初期至已公布的未来交易日。
 
 <Note>
-目前仅支持 **A 股**（`market=cn`）。港股、美股等暂未支持，传入会返回错误。
+支持的市场：`cn`（A 股，含上交所 `sh`、深交所 `sz`、北交所 `bj`）、`hk`（港股）、`us`（美股）。`global` 无日历源，传入会返回错误。
 </Note>
 
 <CodeGroup>
@@ -59,11 +59,11 @@ const data = await response.json();
 </ParamField>
 
 <ParamField query="market" type="string" default="cn">
-  股票市场。目前仅支持 `cn`（A 股）
+  股票市场，可选 `cn`/`hk`/`us`（`global` 不支持）
 </ParamField>
 
 <ParamField query="exchange" type="string">
-  交易所，可选值 `sh`（上交所）、`sz`（深交所）。不传时使用市场默认交易所（A 股为 `sh`）
+  交易所。`cn`：`sh`（上交所）/`sz`（深交所）/`bj`（北交所）；`hk`：`hk`；`us`：`us`。不传时使用市场默认交易所（`cn` 为 `sh`）
 </ParamField>
 
 ## 响应参数

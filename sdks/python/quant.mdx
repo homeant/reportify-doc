@@ -317,7 +317,7 @@ print(df[["symbol", "datetime", "close", "volume"]])
 ## 交易日历 (Trading Calendar)
 
 <Note>
-目前仅支持 **A 股**（`market="cn"`）。港股、美股等暂未支持，传入会抛出错误。
+支持的市场：`cn`（A 股，含 `sh`/`sz`/`bj`）、`hk`（港股）、`us`（美股）。`global` 无日历源，传入会抛出错误。
 </Note>
 
 ### calendar()
@@ -338,8 +338,8 @@ print(df["date"].tolist())
 |------|------|------|------|
 | `start_date` | `str` | 否 | 开始日期 `YYYY-MM-DD`，默认当年 1 月 1 日 |
 | `end_date` | `str` | 否 | 结束日期 `YYYY-MM-DD`，默认当年 12 月 31 日 |
-| `market` | `str` | 否 | 市场，默认 `cn`（仅支持 A 股） |
-| `exchange` | `str` | 否 | 交易所 `sh`/`sz`，默认市场对应交易所（A 股为 `sh`） |
+| `market` | `str` | 否 | 市场，默认 `cn`，可选 `cn`/`hk`/`us` |
+| `exchange` | `str` | 否 | 交易所（`cn`: `sh`/`sz`/`bj`，`hk`: `hk`，`us`: `us`），默认市场对应交易所（`cn` 为 `sh`） |
 
 ---
 
@@ -358,8 +358,8 @@ print(info["next_trading_day"])      # '2026-01-05'
 | 参数 | 类型 | 必填 | 描述 |
 |------|------|------|------|
 | `target` | `str` | 否 | 待判断日期 `YYYY-MM-DD`，默认今天 |
-| `market` | `str` | 否 | 市场，默认 `cn`（仅支持 A 股） |
-| `exchange` | `str` | 否 | 交易所 `sh`/`sz`，默认市场对应交易所（A 股为 `sh`） |
+| `market` | `str` | 否 | 市场，默认 `cn`，可选 `cn`/`hk`/`us` |
+| `exchange` | `str` | 否 | 交易所（`cn`: `sh`/`sz`/`bj`，`hk`: `hk`，`us`: `us`），默认市场对应交易所（`cn` 为 `sh`） |
 
 返回字段：`date`、`is_trading_day`、`previous_trading_day`、`next_trading_day`。
 
